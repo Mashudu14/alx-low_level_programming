@@ -2,12 +2,12 @@
 #include "main.h"
 
 /**
- * *_realloc - Reallocate memory block 
+ * *_realloc - Reallocates memory block
  * @ptr: Previsouly memory allocated by malloc
- * @old_size: size of bytes allocated in memory for ptr
- * @new_size: new size and new memory block
+ * @old_size: size of memory allocated for ptr
+ * @new_size: new size and new memory
  *
- * Return: a point the new memory block must allocated
+ * Return: pointer to the newly allocated memory block
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
