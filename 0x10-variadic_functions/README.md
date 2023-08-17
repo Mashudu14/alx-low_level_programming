@@ -1,2 +1,1 @@
-task 0x10. C - Variadic functions
-learning objectives
+task no 0x10. C - Variadic functions
