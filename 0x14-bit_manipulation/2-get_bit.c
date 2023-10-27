@@ -1,26 +1,20 @@
 #include "main.h"
 
 /**
- * print_binary - Prints the binary representation of numb
- * @n: The numb that have been stored
+ * get_bit - Return the indx numb
+ * @n: Num  to search
+ * @index: Valus of ind
+ *
+ * Return: value of the bit
  */
-void print_binary(unsigned long int n)
+int get_bit(unsigned long int n, unsigned int index)
 {
-	int g, count = 0;
-	unsigned long int arg;
+	int bit_val;
 
-	for (g = 63; g >= 0; g--)
-	{
-		arg = n >> g;
+	if (index > 63)
+		return (-1);
 
-		if (arg & 1)
-		{
-			_putchar('1');
-			count++;
-		}
-		else if (count)
-			_putchar('0');
-	}
-	if (!count)
-		_putchar('0');
+	bit_val = (n >> index) & 1;
+
+	return (bit_val);
 }
