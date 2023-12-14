@@ -1,20 +1,24 @@
 #include "main.h"
-#include <stddef.h>
 
 /**
- * _strchr - Entry point
- * @s: input
- * @c: input
- * Return: Always 0 (Success)
+ * _strchr - Locates a character in a string.
+ * @s: string.
+ * @c: character.
+ *
+ * Return: s + index and \n.
  */
 char *_strchr(char *s, char c)
 {
-	int i = 0;
+	int index = 0;
 
-	for (; s[i] >= '\0'; i++)
+	while (s[index] >= '\0')
 	{
-		if (s[i] == c)
-			return (&s[i]);
+		if (s[index] == c)
+		{
+			return (s + index);
+		}
+		index++;
 	}
-	return (0);
+
+	return ('\0');
 }

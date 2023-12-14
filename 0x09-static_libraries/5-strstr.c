@@ -1,26 +1,36 @@
 #include "main.h"
+
 /**
- * _strstr - Entry point
- * @haystack: input
- * @needle: input
- * Return: Always 0 (Success)
+ * _strstr - Locates a substring.
+ * @haystack: string.
+ * @needle: substring.
+ * Return: haystack and \n
  */
+
 char *_strstr(char *haystack, char *needle)
 {
-	for (; *haystack != '\0'; haystack++)
-	{
-		char *l = haystack;
-		char *p = needle;
+	int index;
 
-		while (*l == *p && *p != '\0')
+	if (*needle == 0)
+		return (haystack);
+
+	while (*haystack)
+	{
+		index = 0;
+
+		if (haystack[index] == needle[index])
 		{
-			l++;
-			p++;
+			do {
+				if (needle[index + 1] == '\0')
+					return (haystack);
+
+				index++;
+
+			} while (haystack[index] == needle[index]);
 		}
 
-		if (*p == '\0')
-			return (haystack);
+		haystack++;
 	}
 
-	return (0);
+	return ('\0');
 }
